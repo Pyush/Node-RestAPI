@@ -13,7 +13,7 @@ router.post('/get', function(req, res, next) {
         },
         function (error) { // failure handler
             console.log(error)
-            res.json({"code" : 100, "status" : "Error in connection database"});
+            res.json({"code" : 100, "status" : "Error in get information from url"});
             return;
         })
 });
