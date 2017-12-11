@@ -10,6 +10,7 @@ var http = require('http');
 var dbConnection=require('./routes/DBConnection/MySQLConnection');
 var index = require('./routes/index');
 var users = require('./routes/users');
+var scrapURL = require('./routes/urlscrap');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/user', users);
+app.use('/link',scrapURL);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
