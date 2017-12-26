@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var urlMetadata = require('url-metadata')
+var urlMetadata = require('url-metadata');
+var sendMail = require('././utils/SendMail');
 
 /* GET users listing. */
 router.post('/get', function(req, res, next) {
@@ -17,5 +18,7 @@ router.post('/get', function(req, res, next) {
             return;
         })
 });
+
+router.post('/sendMail',sendMail);
 
 module.exports = router;

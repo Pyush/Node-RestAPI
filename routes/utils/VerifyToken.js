@@ -9,7 +9,7 @@ function verifyToken(req, res, next) {
         return res.status(403).send({ auth: false, message: 'No token provided.' });
 
     // verifies secret and checks exp
-    jwt.verify(token, config.secret, function(err, decoded) {
+    jwt.verify(token, config.SECRET, function(err, decoded) {
         if (err)
             return res.status(401).send({ auth: false, message: 'Failed to authenticate token.' });
 
